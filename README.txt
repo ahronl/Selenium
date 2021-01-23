@@ -1,12 +1,14 @@
+# Selenium skeleton project
 
+this project contains the basic for selenium automation project using docker container.
 
-## docker build . -t test
+## use from command line
+docker build . -t test
+docker run test
 
-## to run from command line
-## docker run test
-
-## to run the container in interactive mode
+## development from command line
 docker run -it --mount type=bind,source="$(pwd)",target=/app test /bin/bash
-
-## run tests from container
 python src/app.py
+
+## development in vscode
+run debugger with configuration Docker: Python - General
