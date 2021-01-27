@@ -1,0 +1,3 @@
+web_driver:
+  remote:
+    uri: http://host.docker.internal:4444
