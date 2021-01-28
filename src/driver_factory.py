@@ -21,7 +21,7 @@ class DriverFactory:
         return chrome_options
 
     def create_chrome_driver(self):
-        chrome_options = create_chrome_options()
+        chrome_options = self.create_chrome_options()
         return webdriver.Chrome(options=chrome_options)
 
     def create_remote_chrome_driver(self):
