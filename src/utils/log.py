@@ -3,11 +3,11 @@ import time
 import inspect
 import sys
 
-def get_logger():
-   return logging.getLogger()
+def get_logger(name):
+   return logging.getLogger(name)
 
 # logger format https://docs.python.org/3/library/logging.html
-def set_logging_config() -> None:
+def set_logging_config():
     logFormatter = logging.Formatter("%(pathname)s %(asctime)s [%(levelname)-5.5s]  %(message)s")
     rootLogger = logging.getLogger()
     rootLogger.setLevel(logging.DEBUG)

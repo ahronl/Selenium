@@ -1,9 +1,18 @@
+import yaml
+
 from selenium import webdriver
+from pathlib import Path
 
 class DriverFactory:
     
-    def __init__(self, conf):
-        self._config = conf
+    def __init__(self):
+        self._config = self.read_conf()
+
+    def read_conf(self):
+        path = (Path(__file__).parent / "../../etc/config.yml").resolve()
+        with open(path) as file:
+            conf = yaml.load(file, Loader=yaml.FullLoader)
+        return conf
 
     def create(self, name):
         if name == 'chrome':
