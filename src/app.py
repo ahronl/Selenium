@@ -5,16 +5,11 @@ from tests.search_text import SearchText
 from tests.home_page_test import HomePageTest
 
 def app() -> None:
+    #creates logger in the container
     set_logging_config()
-    
-    # get all tests from SearchText and HomePageTest class
-    search_text_tests = unittest.TestLoader().loadTestsFromTestCase(SearchText)
-    home_page_test_tests = unittest.TestLoader().loadTestsFromTestCase(HomePageTest)
-    
-    # create a test suite combining search_text and home_page_tes
-    test_suite = unittest.TestSuite([home_page_test_tests, search_text_tests])
-    
-    # run the suite
+
+    #discover the test suite
+    test_suite = unittest.TestLoader().discover('tests','*test.py','.')
     unittest.TextTestRunner(verbosity=2).run(test_suite)
 
 if __name__ == "__main__":

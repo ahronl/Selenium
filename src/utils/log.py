@@ -3,6 +3,8 @@ import time
 import inspect
 import sys
 
+from pathlib import Path
+
 def get_logger(name):
    return logging.getLogger(name)
 
@@ -12,7 +14,8 @@ def set_logging_config():
     rootLogger = logging.getLogger()
     rootLogger.setLevel(logging.DEBUG)
 
-    fileHandler = logging.FileHandler("./selenium.log")
+    log_filer = (Path(__file__).parent / "../../selenium.log").resolve()
+    fileHandler = logging.FileHandler(log_filer)
     fileHandler.setFormatter(logFormatter)
     rootLogger.addHandler(fileHandler)
 
