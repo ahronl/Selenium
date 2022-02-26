@@ -4,3 +4,4 @@ regex==2020.11.13
 PyInquirer==1.0.3
 selenium==3.141.0
 pyyaml==5.4.1
+requests==2.25.0
