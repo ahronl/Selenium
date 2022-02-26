@@ -42,3 +42,15 @@ class RestClient:
     def pretty_print(self):
         req = self._res.request
         print('{}\n{}\r\n{}\r\n\r\n{}'.format('-----------START-----------',req.method + ' ' + req.url,'\r\n'.join('{}: {}'.format(k, v) for k, v in req.headers.items()),req.body))
+
+
+
+        """
+         usage example 
+
+         client = RestClient()
+         client.with_header("Accept", "application/json")
+               .with_token("Bearer ACCESS-TOKEN")
+               .post("https://gorest.co.in/public/v2/users", {"name":"Tenali Ramakrishna", "gender":"male", "email":"tenali.ramakrishna@15ce.com", "status":"active"}).get_response_json()
+
+        """
